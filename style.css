@@ -1,72 +1,79 @@
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    line-height: 1.6;
+}
 
+header {
+    background: linear-gradient(120deg, #0077ff, #3aaaff);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
 
 .subtitle {
-margin-top: 10px;
-font-size: 1.2rem;
-opacity: 0.9;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
-
 
 .contact a {
-color: #fff;
-margin: 0 10px;
-text-decoration: none;
-font-weight: bold;
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
-
 
 .section {
-padding: 50px 20px;
-max-width: 900px;
-margin: auto;
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
 }
-
 
 section h2 {
-color: #0077ff;
-margin-bottom: 15px;
+    color: #0077ff;
+    margin-bottom: 15px;
 }
-
 
 ul li {
-margin: 8px 0;
+    margin: 8px 0;
 }
-
 
 .job {
-margin-bottom: 25px;
+    margin-bottom: 25px;
 }
-
 
 footer {
-text-align: center;
-padding: 20px;
-background: #eee;
-margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    margin-top: 40px;
 }
-
 
 /* Simple Fade Animations */
 .fade-in {
-animation: fadeIn 1s ease forwards;
-opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
 }
-
 
 .fade-in-delay {
-animation: fadeIn 1.5s ease forwards;
-opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0;
 }
-
 
 .fade-in-delay2 {
-animation: fadeIn 2s ease forwards;
-opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
 }
 
-
 @keyframes fadeIn {
-from { opacity: 0; transform: translateY(10px); }
-to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
