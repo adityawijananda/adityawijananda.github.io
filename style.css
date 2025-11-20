@@ -1,195 +1,72 @@
-/* RESET & GLOBAL STYLES */
-:root {
-    --primary-color: #007bff; /* Biru Profesional */
-    --secondary-color: #6c757d; /* Abu-abu Sekunder */
-    --background-light: #f8f9fa; /* Latar Belakang Sangat Terang */
-    --background-dark: #343a40; /* Latar Belakang Gelap untuk Footer/Header */
-    --text-dark: #212529; /* Teks Utama */
-    --card-bg: #ffffff; /* Latar Belakang Kartu */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--background-light);
-}
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease; /* Animasi Sederhana */
-}
-
-a:hover {
-    color: #0056b3;
-}
-
-ul {
-    list-style: disc;
-    margin-left: 20px;
-}
-
-h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 5px;
-}
-
-/* HEADER/HERO SECTION */
-.hero {
-    background: var(--background-dark);
-    color: var(--background-light);
-    padding: 50px 0;
-    text-align: center;
-    border-bottom: 5px solid var(--primary-color);
-}
-
-.hero h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
-    margin-bottom: 5px;
-}
-
-.hero h2 {
-    font-weight: 400;
-    font-size: 1.2em;
-    color: #cccccc;
-    margin-bottom: 20px;
-}
-
-.contact-info a {
-    color: #ffffff;
-    font-weight: bold;
-}
-.contact-info a:hover {
-    color: var(--primary-color);
+.subtitle {
+margin-top: 10px;
+font-size: 1.2rem;
+opacity: 0.9;
 }
 
 
-/* NAVIGATION */
-nav {
-    background: var(--card-bg);
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.contact a {
+color: #fff;
+margin: 0 10px;
+text-decoration: none;
+font-weight: bold;
 }
 
-nav a {
-    margin: 0 15px;
-    font-weight: bold;
-    color: var(--text-dark);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding: 8px 10px;
-    border-radius: 4px;
+
+.section {
+padding: 50px 20px;
+max-width: 900px;
+margin: auto;
 }
 
-nav a:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
+
+section h2 {
+color: #0077ff;
+margin-bottom: 15px;
 }
 
-/* MAIN CONTENT SECTIONS */
-main {
-    padding: 30px 20px;
+
+ul li {
+margin: 8px 0;
 }
 
-.section-card {
-    background: var(--card-bg);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease; /* Animasi Sederhana */
+
+.job {
+margin-bottom: 25px;
 }
 
-/* Animasi Sederhana - Hover pada Kartu */
-.section-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
 
-/* SKILLS GRID */
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.skill-category {
-    flex: 1;
-    min-width: 280px;
-    padding: 15px;
-    background-color: var(--background-light);
-    border-radius: 6px;
-    border-left: 3px solid var(--primary-color);
-}
-
-.skill-category h4 {
-    color: var(--text-dark);
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* JOB & EDUCATION ENTRIES */
-.job-entry, .education-entry {
-    margin-bottom: 25px;
-    padding: 15px;
-    border-left: 4px solid var(--secondary-color);
-    background-color: var(--background-light);
-    border-radius: 4px;
-    transition: background-color 0.3s ease; /* Animasi Sederhana */
-}
-
-.job-entry:hover, .education-entry:hover {
-    background-color: #e9ecef; /* Sedikit lebih gelap saat di-hover */
-}
-
-.job-entry h4, .education-entry h4 {
-    margin-bottom: 5px;
-    color: var(--text-dark);
-}
-
-.company, .institution {
-    font-style: italic;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-
-/* FOOTER */
 footer {
-    background: var(--background-dark);
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
+text-align: center;
+padding: 20px;
+background: #eee;
+margin-top: 40px;
 }
 
-/* RESPONSIVENESS */
-@media (max-width: 768px) {
-    .skills-grid {
-        flex-direction: column;
-    }
-    
-    nav a {
-        display: block;
-        text-align: center;
-        margin: 5px 0;
-    }
+
+/* Simple Fade Animations */
+.fade-in {
+animation: fadeIn 1s ease forwards;
+opacity: 0;
+}
+
+
+.fade-in-delay {
+animation: fadeIn 1.5s ease forwards;
+opacity: 0;
+}
+
+
+.fade-in-delay2 {
+animation: fadeIn 2s ease forwards;
+opacity: 0;
+}
+
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
 }
