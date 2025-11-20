@@ -1,10 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Website Surya</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - I Putu Surya Aditya Wijananda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    </head>
 <body>
-  <h1>Halo, ini website pribadi saya!</h1>
-  <p>Dibuat menggunakan GitHub Pages.</p>
+
+    <header class="hero">
+        <div class="container">
+            <h1>I PUTU SURYA ADITYA WIJANANDA</h1>
+            <h2>Web Developer | Full Stack Enthusiast</h2>
+            <div class="contact-info">
+                <p>suryaaditya000@gmail.com | 
+                    <a href="https://linkedin.com/in/surya-aditya-wijananda/" target="_blank">LinkedIn</a> | 
+                    +62 81359563247</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#about">Tentang</a>
+            <a href="#skills">Keahlian</a>
+            <a href="#experience">Pengalaman Kerja</a>
+            <a href="#education">Pendidikan</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section id="about" class="section-card">
+            <h3>🎯 Tujuan Karir</h3>
+            <p>Seorang **Web Developer yang sangat termotivasi** dengan pengalaman dalam pengembangan *front-end* dan *back-end*. Mahir dalam **HTML, CSS, JavaScript, PHP, Laravel, dan Angular**, dengan pemahaman kuat tentang manajemen basis data dan kontrol versi (Git). Bersemangat untuk menciptakan situs web yang fungsional, responsif, dan berkinerja tinggi. Mencari kesempatan untuk menyumbangkan keahlian dalam pengembangan web, pemecahan masalah, dan kolaborasi tim.</p>
+        </section>
+
+        <section id="skills" class="section-card">
+            <h3>🛠️ Keahlian</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming & Development</h4>
+                    <ul>
+                        <li>**Profisien:** HTML, CSS, JavaScript, PHP, NodeJS</li>
+                        <li>**Back-End:** Laravel, MySQL, RESTful APIs, Integrasi Pihak Ketiga</li>
+                        <li>**Front-End:** Angular, Bootstrap (Pengalaman dengan React/Vue.js)</li>
+                        <li>**Tools:** Git (Version Control Systems)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Web Development & Optimization</h4>
+                    <ul>
+                        <li>Desain UI Interaktif, Animasi, Formulir</li>
+                        <li>**Desain Responsif:** Pengalaman mulus di berbagai perangkat</li>
+                        <li>**Optimasi Kinerja:** Peningkatan kecepatan *loading* dan efisiensi situs</li>
+                        <li>Pengujian & Debugging (Kompatibilitas *cross-browser*)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Kolaborasi & Pemecahan Masalah</h4>
+                    <ul>
+                        <li>Komunikasi Kuat, mampu bekerja di lingkungan tim yang bergerak cepat</li>
+                        <li>Menerjemahkan UI/UX menjadi situs web fungsional</li>
+                        <li>Pemecahan Masalah Sistematis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-card">
+            <h3>💼 Pengalaman Kerja</h3>
+
+            <div class="job-entry">
+                <h4>Full Stack Developer Intern</h4>
+                <p class="company">Bali Web Design | Juni 2022 - 2023</p>
+                <ul>
+                    <li>Merancang dan mengembangkan situs web responsif menggunakan HTML, CSS, dan JavaScript.</li>
+                    <li>Mengintegrasikan API pihak ketiga untuk meningkatkan fungsionalitas.</li>
+                    <li>Bekerja sama dengan *senior developer* untuk *debug* dan mengoptimalkan kinerja situs web.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h4>Full-Time Coding Instructor</h4>
+                <p class="company">Kode Kiddo | Juni 2022 - 2025</p>
+                <ul>
+                    <li>Mengajar pengembangan web dan *software engineering* kepada siswa (SD hingga SMA).</li>
+                    <li>Melakukan *workshop coding* praktis dan membimbing siswa untuk kompetisi internasional.</li>
+                    <li>Menyelenggarakan webinar tentang AI dan teknologi web yang sedang berkembang.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="education" class="section-card">
+            <h3>🎓 Pendidikan</h3>
+            
+            <div class="education-entry">
+                <h4>Bachelor’s Degree in Information Technology (BIT)</h4>
+                <p class="institution">HELP University | Kuala Lumpur, Malaysia (2018-2023)</p>
+            </div>
+            
+            <div class="education-entry">
+                <h4>Bachelor’s Degree in Computer Science (S.Kom)</h4>
+                <p class="institution">ITB STIKOM Bali | Denpasar, Bali (2018-2023)</p>
+            </div>
+        </section>
+
+        <section id="other" class="section-card">
+            <h3>⭐ Lain-lain</h3>
+            
+            <div class="extra-info">
+                <h4>Volunteering & Leadership</h4>
+                <p><strong>Committee Member, Ritech Expo</strong> | Denpasar, Bali, 2019</p>
+                <ul>
+                    <li>Membantu dalam pengorganisasian Pameran Riset & Teknologi nasional.</li>
+                </ul>
+            </div>
+            
+            <div class="extra-info">
+                <h4>Bahasa</h4>
+                <p><strong>Inggris:</strong> Mahir (menulis), Percakapan (berbicara)</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Surya Aditya Wijananda. Dibangun dengan HTML & CSS.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
