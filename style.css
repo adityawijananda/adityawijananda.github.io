@@ -1,21 +1,32 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f8f9fa;
-    color: #222;
-    line-height: 1.6;
+/* -------------------- GLOBAL -------------------- */
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #f3f5f7;
+    color: #222;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* -------------------- HEADER -------------------- */
 header {
-    background: linear-gradient(120deg, #0077ff, #3aaaff);
+    background: linear-gradient(120deg, #0066ff, #36a3ff);
     color: #fff;
-    padding: 80px 20px;
+    padding: 90px 20px;
     text-align: center;
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin: 0;
+    font-weight: 700;
 }
 
 .subtitle {
@@ -26,20 +37,39 @@ h1 {
 
 .contact a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 12px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
+.contact a:hover {
+    opacity: 0.7;
+}
+
+/* -------------------- SECTIONS -------------------- */
 .section {
-    padding: 50px 20px;
-    max-width: 900px;
+    padding: 60px 20px;
+    max-width: 1000px;
     margin: auto;
 }
 
 section h2 {
-    color: #0077ff;
-    margin-bottom: 15px;
+    color: #0066ff;
+    margin-bottom: 20px;
+    font-size: 1.9rem;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #0066ff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 5px;
 }
 
 ul li {
@@ -47,24 +77,84 @@ ul li {
 }
 
 .job {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+/* -------------------- SKILLS GRID -------------------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.skill-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.skill-card img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+/* -------------------- PORTFOLIO -------------------- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #0066ff;
+}
+
+/* -------------------- FOOTER -------------------- */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #eee;
+    padding: 25px;
+    background: #e5e7eb;
     margin-top: 40px;
+    font-weight: 600;
 }
 
-/* Simple Fade Animations */
+/* -------------------- ANIMATIONS -------------------- */
 .fade-in {
-    animation: fadeIn 1s ease forwards;
+    animation: fadeIn 1.1s ease forwards;
     opacity: 0;
 }
 
 .fade-in-delay {
-    animation: fadeIn 1.5s ease forwards;
+    animation: fadeIn 1.6s ease forwards;
     opacity: 0;
 }
 
