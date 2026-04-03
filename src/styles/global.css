@@ -1,0 +1,60 @@
+:root {
+  --bg-deep: #06060a;
+  --bg-elevated: #0e0e14;
+  --bg-card: rgba(18, 18, 26, 0.72);
+  --border-subtle: rgba(201, 169, 98, 0.12);
+  --border-glow: rgba(201, 169, 98, 0.35);
+  --text-primary: #f4f1ea;
+  --text-muted: rgba(244, 241, 234, 0.58);
+  --accent: #c9a962;
+  --accent-soft: rgba(201, 169, 98, 0.15);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --radius-lg: 20px;
+  --radius-sm: 12px;
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}

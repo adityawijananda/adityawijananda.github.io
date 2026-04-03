@@ -1,0 +1,198 @@
+---
+import { profile } from '../data/portfolio';
+
+const shortName = 'PSAW';
+---
+
+<header class="header">
+  <div class="header__inner">
+    <a class="header__brand" href="#hero" aria-label="Back to top">
+      <span class="header__monogram">{shortName}</span>
+      <span class="header__name">{profile.name.split(' ')[0]} · Developer</span>
+    </a>
+    <nav class="header__nav" aria-label="Primary">
+      <a href="#summary">Profile</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button type="button" class="header__toggle" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+    </button>
+  </div>
+  <div class="header__mobile" id="mobile-nav" hidden data-mobile-nav>
+    <a href="#summary">Profile</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<script>
+  function initNav() {
+    const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+    const panel = document.querySelector<HTMLElement>('[data-mobile-nav]');
+    if (!toggle || !panel) return;
+
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+    };
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setOpen(!open);
+    });
+
+    panel.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => setOpen(false));
+    });
+  }
+  initNav();
+</script>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 0.85rem clamp(1.25rem, 4vw, 3rem);
+    background: linear-gradient(180deg, rgba(6, 6, 10, 0.92) 0%, rgba(6, 6, 10, 0.65) 70%, transparent 100%);
+    backdrop-filter: blur(12px);
+  }
+
+  .header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .header__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .header__brand:hover {
+    opacity: 1;
+  }
+
+  .header__monogram {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+
+  .header__name {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .header__nav {
+    display: none;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .header__nav a {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .header__nav a:hover {
+    color: var(--text-primary);
+    opacity: 1;
+  }
+
+  @media (min-width: 880px) {
+    .header__nav {
+      display: flex;
+    }
+
+    .header__toggle {
+      display: none;
+    }
+  }
+
+  .header__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    background: rgba(14, 14, 20, 0.6);
+    cursor: pointer;
+  }
+
+  .header__toggle-bar {
+    display: block;
+    height: 2px;
+    width: 18px;
+    margin: 0 auto;
+    background: var(--text-primary);
+    border-radius: 1px;
+  }
+
+  @media (min-width: 880px) {
+    .header__toggle {
+      display: none;
+    }
+  }
+
+  .header__mobile {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    background: rgba(14, 14, 20, 0.95);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header__mobile[hidden] {
+    display: none !important;
+  }
+
+  .header__mobile a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 0.35rem 0;
+  }
+
+  .header__mobile a:hover {
+    color: var(--accent);
+    opacity: 1;
+  }
+
+  @media (min-width: 880px) {
+    .header__mobile {
+      display: none !important;
+    }
+  }
+</style>

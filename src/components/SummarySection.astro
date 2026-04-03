@@ -1,0 +1,112 @@
+---
+import { profile } from '../data/portfolio';
+---
+
+<section class="summary section" id="summary" aria-labelledby="summary-heading">
+  <div class="section__container">
+    <div class="summary__layout">
+      <header class="summary__header">
+        <p class="section__eyebrow">Profile</p>
+        <h2 class="section__title" id="summary-heading">Summary</h2>
+      </header>
+      <div class="summary__body">
+        <p class="summary__text">{profile.summary}</p>
+        <a class="summary__link" href="#skills">
+          View technical stack
+          <span class="summary__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .section__container {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .section__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+
+  .section__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .summary__layout {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .summary__layout {
+      grid-template-columns: minmax(200px, 280px) 1fr;
+      gap: 3.5rem;
+    }
+  }
+
+  .summary__body {
+    position: relative;
+    padding: 2rem 2rem 2.25rem;
+    background: linear-gradient(145deg, rgba(201, 169, 98, 0.07) 0%, transparent 55%),
+      var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(12px);
+  }
+
+  .summary__body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.45;
+  }
+
+  .summary__text {
+    margin: 0 0 1.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .summary__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .summary__link:hover .summary__arrow {
+    transform: translateX(4px);
+  }
+
+  .summary__arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+</style>

@@ -1,0 +1,167 @@
+---
+import { profile } from '../data/portfolio';
+---
+
+<footer class="footer" id="contact">
+  <div class="footer__glow" aria-hidden="true"></div>
+  <div class="footer__inner">
+    <div class="footer__cta">
+      <p class="footer__eyebrow">Contact</p>
+      <h2 class="footer__title">Let’s build something exceptional</h2>
+      <p class="footer__text">
+        Open to collaborations, fullstack roles, and mentoring opportunities. Reach out by email or phone.
+      </p>
+    </div>
+    <div class="footer__links">
+      <a class="footer__link" href={`mailto:${profile.email}`}>
+        <span class="footer__label">Email</span>
+        <span class="footer__value">{profile.email}</span>
+      </a>
+      <a class="footer__link" href={`tel:${profile.phone.replace(/\s/g, '')}`}>
+        <span class="footer__label">Phone</span>
+        <span class="footer__value">{profile.phone}</span>
+      </a>
+      <div class="footer__link footer__link--static">
+        <span class="footer__label">Location</span>
+        <span class="footer__value">{profile.location}</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© {new Date().getFullYear()} {profile.name}. Crafted with Astro.</p>
+      <a class="footer__top" href="#hero" aria-label="Back to top">↑ Top</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    padding: clamp(4rem, 10vw, 6rem) clamp(1.5rem, 5vw, 4rem) 2.5rem;
+    overflow: hidden;
+  }
+
+  .footer__glow {
+    position: absolute;
+    bottom: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90vw, 720px);
+    height: min(50vw, 360px);
+    background: radial-gradient(ellipse, rgba(201, 169, 98, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .footer__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .footer__cta {
+    text-align: center;
+    margin-bottom: 2.75rem;
+  }
+
+  .footer__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+
+  .footer__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 4vw, 2.5rem);
+    font-weight: 500;
+    margin: 0 0 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .footer__text {
+    margin: 0 auto;
+    max-width: 480px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .footer__links {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer__links {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .footer__link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.25rem 1.15rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    color: inherit;
+    transition:
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .footer__link:hover {
+    border-color: rgba(201, 169, 98, 0.28);
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+
+  .footer__link--static {
+    cursor: default;
+  }
+
+  .footer__label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .footer__value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    word-break: break-word;
+  }
+
+  .footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .footer__copy {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+  }
+
+  .footer__top {
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .footer__top:hover {
+    opacity: 1;
+  }
+</style>

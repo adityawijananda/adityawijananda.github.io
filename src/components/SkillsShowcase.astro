@@ -1,0 +1,156 @@
+---
+import { skillCategories } from '../data/portfolio';
+
+const iconColor = 'c9a962';
+const iconUrl = (slug: string) =>
+  `https://cdn.simpleicons.org/${slug}/${iconColor}`;
+---
+
+<section class="skills section" id="skills" aria-labelledby="skills-heading">
+  <div class="section__container">
+    <header class="section__header">
+      <p class="section__eyebrow">Expertise</p>
+      <h2 class="section__title" id="skills-heading">Technical skills</h2>
+      <p class="section__lead">A curated stack across languages, front-end, back-end, and tooling.</p>
+    </header>
+
+    <div class="skills__grid">
+      {
+        skillCategories.map((cat) => (
+          <article class="skills__card">
+            <h3 class="skills__card-title">{cat.title}</h3>
+            <ul class="skills__list">
+              {cat.items.map((item) => (
+                <li class="skills__item">
+                  <span class="skills__icon-wrap">
+                    <img
+                      src={iconUrl(item.icon)}
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    />
+                  </span>
+                  <span class="skills__name">{item.name}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: clamp(4rem, 10vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .section__container {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .section__header {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 3.25rem;
+  }
+
+  .section__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+
+  .section__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .section__lead {
+    margin: 0;
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 1.05rem;
+  }
+
+  .skills__grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .skills__card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.65rem 1.5rem 1.5rem;
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(16px);
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .skills__card:hover {
+    border-color: rgba(201, 169, 98, 0.22);
+    transform: translateY(-3px);
+  }
+
+  .skills__card-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 0 0 1.15rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-subtle);
+    letter-spacing: 0.03em;
+  }
+
+  .skills__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .skills__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+  }
+
+  .skills__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: rgba(201, 169, 98, 0.06);
+    border: 1px solid rgba(201, 169, 98, 0.1);
+    flex-shrink: 0;
+  }
+
+  .skills__icon-wrap img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .skills__name {
+    color: var(--text-primary);
+    font-weight: 400;
+  }
+</style>
